@@ -4,6 +4,13 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 module.exports = {
+  publicPath:'./',//vue-cli3.3+新版本使用
+  outputDir: 'dist',
+  assetsDir: 'static',
+  filenameHashing: true,
+  lintOnSave: true,
+  runtimeCompiler: false,
+  productionSourceMap: false,
   chainWebpack: config => {
     //路径配置
     config.resolve.alias
@@ -18,10 +25,8 @@ module.exports = {
       .set("config", resolve("src/config"));
   },
 
-  // webpack-dev-server 相关配置
-  devServer: {
-    // 调试端口
-    // port: 8989
-  }
-  //其他配置....
+ 
+ 
+
+
 };
